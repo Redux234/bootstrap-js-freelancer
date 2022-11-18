@@ -15,6 +15,7 @@ function submitform(event){
 
     let hoursofwork = document.getElementById("hoursofwork").value;
     console.log(hoursofwork)
+    let oredilavoro = parseInt(hoursofwork)
 
     let typeofwork = document.getElementById("typeofwork").value;
     if(typeofwork == 1){
@@ -33,7 +34,31 @@ function submitform(event){
     let message = document.getElementById("message").value;
     console.log(message)
     
+
+
+   
+    
+    let costo = 1
+    if(typeofwork==1){
+        costo=20.50
         
+    }else if(typeofwork==2){
+        costo=15.30
+    
+    }else if(typeofwork==3){
+        costo=33.60
+    
+    }else{
+        costo=1
+    
+    }
+    let prezzoprogetto = (oredilavoro * costo)
+    
+    
+    console.log(prezzoprogetto)
+    
+    
 
 }
 
+// Calcolo prezzo progetto
