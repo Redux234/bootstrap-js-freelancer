@@ -59,7 +59,7 @@ function submitform(event) {
     }
 
     let prezzoprogetto = 0
-
+    
 
     if (codicisconto.includes(discountcode)) {
         prezzoprogetto = (oredilavoro * costo) * 0.75
@@ -79,7 +79,8 @@ function submitform(event) {
 
 
 
-
+    console.log(codicisconto)
 }
+
 
 
