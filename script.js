@@ -1,4 +1,6 @@
 let codicisconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
+
+
 function submitform(event) {
     event.preventDefault()
 
@@ -11,7 +13,12 @@ function submitform(event) {
     console.log(lastname)
 
     let email = document.getElementById("email").value;
-    console.log(email)
+
+    if (email.includes("@")) {
+        console.log(email)
+    } else {
+        alert("Non hai inserito una email")
+    }
 
     let hoursofwork = document.getElementById("hoursofwork").value;
     console.log(hoursofwork)
@@ -30,6 +37,8 @@ function submitform(event) {
 
     let discountcode = document.getElementById("discountcode").value;
     console.log(discountcode)
+
+
 
     let message = document.getElementById("message").value;
     console.log(message)
@@ -50,25 +59,27 @@ function submitform(event) {
     }
 
     let prezzoprogetto = 0
-    
-    
-        if (codicisconto.includes(discountcode)) {
-            prezzoprogetto = (oredilavoro * costo) * 0.75
-            console.log(prezzoprogetto)
-            document.getElementById("prezzoscontato").innerHTML="Il prezzo del progetto è: " + prezzoprogetto + " €"
-        } else {
-            alert("Il codice inserito non è valido")
-            prezzoprogetto = (oredilavoro * costo)
-            document.getElementById("prezzoscontato").innerHTML="Il prezzo del progetto è: " + prezzoprogetto + " €"
-            console.log(prezzoprogetto)
-        
-        }
-    
-    
 
-   
 
-   
+    if (codicisconto.includes(discountcode)) {
+        prezzoprogetto = (oredilavoro * costo) * 0.75
+        let prezzoscontatoarrotondato = prezzoprogetto.toFixed(2)
+        console.log(prezzoscontatoarrotondato)
+        document.getElementById("prezzoscontato").innerHTML = "Il prezzo del progetto è: " + prezzoscontatoarrotondato + " €"
+    } else {
+        alert("Il codice inserito non è valido")
+        prezzoprogetto = (oredilavoro * costo)
+        let prezzoarrotondato = prezzoprogetto.toFixed(2)
+        document.getElementById("prezzoscontato").innerHTML = "Il prezzo del progetto è: " + prezzoarrotondato + " €"
+        console.log(prezzoarrotondato)
+
+    }
+
+
+
+
+
+
 }
 
 
