@@ -142,40 +142,47 @@
         <div class="text-center pt-4 pb-4 mt-4">
             <h2>WANT AN OFFER?</h2>
         </div>
-        <div class="row">
+        <form class="row mb-0" onsubmit="submitform(event)">
             <div class="col-12 col-md-6 pb-3">
                 <label for="inputFirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" placeholder="Giorgio" aria-label="First name">
+                <input type="text" class="form-control" placeholder="Giorgio" aria-label="First name" id="firstname">
             </div>
             <div class="col-12 col-md-6 pb-3">
                 <label for="inputLastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" placeholder="Galli" aria-label="Last name">
+                <input type="text" class="form-control" placeholder="Galli" aria-label="Last name" id="lastname">
             </div>
             <div class="col-12 col-md-6 pb-3">
                 <label for="inputEmailAddress" class="form-label">Email Address</label>
-                <input type="text" class="form-control" placeholder="giorgiogalli@gmail.com" aria-label="Email address">
+                <input type="text" class="form-control" placeholder="giorgiogalli@gmail.com" aria-label="Email address" id="email">
             </div>
             <div class="col-12 col-md-6 pb-3">
                 <label for="inputHoursRequested" class="form-label">Hours requested</label>
-                <input type="text" class="form-control" placeholder="10" aria-label="Hours requested">
+                <input type="text" class="form-control" placeholder="10" aria-label="Hours requested" id="hoursofwork">
             </div>
             <div class="col-12 col-md-6 pb-3">
-                <label for="inputTypeOfWork" class="form-label">Type of Work</label>
-                <input type="text" class="form-control" placeholder="Backend Development" aria-label="Type of work">
+                <label class="form-label" for="inlineFormSelectPref">Type of Work</label>
+                <select class="form-select" id="typeofwork">
+                  <option selected>Choose...</option>
+                  <option value="1">Backend Development</option>
+                  <option value="2">Frontend Development</option>
+                  <option value="3">Study and analysis of the project</option>
+                </select>
             </div>
             <div class="col-12 col-md-6 pb-3">
                 <label for="inputDiscountCode" class="form-label">Discount Code</label>
-                <input type="text" class="form-control" placeholder="YHDNJ32" aria-label="Discount code">
+                <input type="text" class="form-control" placeholder="YHDNJ32" aria-label="Discount code" id="discountcode">
             </div>
             <div class="col-12 pb-3">
-                <label for="inputmESSAGE" class="form-label">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                <label for="inputmessage" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4"></textarea>
             </div>
-        </div>
+            <div class="col-12 text-center pb-3">
+                <button type="submit" class="btn btn-warning">Sign in</button>
+            </div>
+            <h4 class="pt-5 pb-2">Il prezzo del progetto è:</h4>
+        </form>
 
-        <div class="col-12 text-center pb-3">
-            <button type="submit" class="btn btn-warning">Sign in</button>
-        </div>
+       
     </div>
 
     <footer class="container-fluid bg-dark text-center text-muted">
