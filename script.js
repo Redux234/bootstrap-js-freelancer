@@ -1,5 +1,5 @@
-
-function submitform(event){
+let codicisconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
+function submitform(event) {
     event.preventDefault()
 
 
@@ -18,13 +18,13 @@ function submitform(event){
     let oredilavoro = parseInt(hoursofwork)
 
     let typeofwork = document.getElementById("typeofwork").value;
-    if(typeofwork == 1){
+    if (typeofwork == 1) {
         console.log("Backend Development")
-    }else if (typeofwork==2){
+    } else if (typeofwork == 2) {
         console.log("Frontend Development")
-    }else if(typeofwork==3){
+    } else if (typeofwork == 3) {
         console.log("Study and analysis of the project")
-    }else{
+    } else {
         alert("Non hai inserito un tipo di lovoro")
     }
 
@@ -33,32 +33,42 @@ function submitform(event){
 
     let message = document.getElementById("message").value;
     console.log(message)
-    
 
+    let costo = 1
+    if (typeofwork == 1) {
+        costo = 20.50
+
+    } else if (typeofwork == 2) {
+        costo = 15.30
+
+    } else if (typeofwork == 3) {
+        costo = 33.60
+
+    } else {
+        costo = 0
+
+    }
+
+    let prezzoprogetto = 0
+    
+    
+        if (codicisconto.includes(discountcode)) {
+            prezzoprogetto = (oredilavoro * costo) * 0.75
+            console.log(prezzoprogetto)
+            document.getElementById("prezzoscontato").innerHTML="Il prezzo del progetto è: " + prezzoprogetto + " €"
+        } else {
+            alert("Il codice inserito non è valido")
+            prezzoprogetto = (oredilavoro * costo)
+            document.getElementById("prezzoscontato").innerHTML="Il prezzo del progetto è: " + prezzoprogetto + " €"
+            console.log(prezzoprogetto)
+        
+        }
+    
+    
 
    
-    
-    let costo = 1
-    if(typeofwork==1){
-        costo=20.50
-        
-    }else if(typeofwork==2){
-        costo=15.30
-    
-    }else if(typeofwork==3){
-        costo=33.60
-    
-    }else{
-        costo=1
-    
-    }
-    let prezzoprogetto = (oredilavoro * costo)
-    
-    
-    console.log(prezzoprogetto)
-    
-    
 
+   
 }
 
-// Calcolo prezzo progetto
+
